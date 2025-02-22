@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .heading {
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-size: 40px;
+            position: fixed;
+            width: 100%;
+        }
+
+        .boi-logo {
+            position: fixed;
+            top: 0px;
+            width: fit-content;
+            height: 106px;
+        }
+
+        .rbi-logo {
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .sidebar {
+            margin: 0;
+            padding: 15px;
+            position: fixed;
+            top: 106px;
+            background-color: aqua;
+            height: 620px;
+            width: 180px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 25px;
+            /* margin: 300px auto; */
+            border: 2px solid black;
+            border-bottom-right-radius: 20px;
+            padding: 5px;
+            background-color: orange;
+            color: black;
+        }
+
+        ol.list {
+            list-style: none;
+        }
+
+        ol.list li {
+            margin: 10px;
+        }
+
+        a:hover {
+            background-color: red;
+        }
+
+        .count {
+            position: fixed;
+            bottom: 50px;
+            left: 250px;
+        }
+
+        .acc {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #para {
+            border: 2px solid black;
+            border-bottom-right-radius: 20px;
+            background-color: green;
+            color: black;
+            height: 100px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+
+        }
+
+        .amount {
+            position: fixed;
+            bottom: 50px;
+            left: 500px;
+        }
+
+        .amt {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #rupees {
+            border: 2px solid black;
+            border-bottom-right-radius: 20px;
+            background-color: green;
+            color: black;
+            height: 100px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+
+        }
+
+        .search {
+            position: fixed;
+            left: 300px;
+            margin: 200px;
+            border: 1px solid black;
+            height: 100px;
+            background-color: white;
+        }
+
+        .table,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .table,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .table,
+        thead {
+            width: 700px;
+            height: 50px;
+            font-size: 20px;
+            background-color: green;
+        }
+
+        .table,
+        tbody {
+            width: 700px;
+            height: 50px;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .search-button {
+            position: fixed;
+            left: 40px;
+            margin: 200px;
+            height: 100px;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            height: 30px;
+            width: 150px;
+            border-color: black;
+            border-radius: 10px;
+        }
+
+        input[type="submit"] {
+            height: 30px;
+            width: 100px;
+            background-color: blue;
+            border-color: black;
+            border-radius: 10px;
+        }
+
+        #searching {
+            font-size: 18px;
+            color: white;
+            padding: 2px;
+        }
+
+        #searching:hover {
+            background-color: red;
+        }
+
+        #message {
+            color: green;
+            font-size: 15px;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        .logout {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+
+        }
+
+        #logout {
+            font-size: 18px;
+            color: white;
+            background-color: blue;
+            height: 30px;
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        #logout:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>💰Bank of India💰</h1>
+    </div>
+    <div>
+        <img src="BOI.jpg" alt="" class="boi-logo">
+    </div>
+    <div>
+        <img src="rbi.jpg" alt="" class="rbi-logo">
+    </div>
+    <div class="logout">
+        <button id="logout">Logout</button>
+    </div>
+    <div class="sidebar">
+        <h1>Actions</h1><br>
+        <ol class="list">
+            <li><a href="create.html">Create</a></li><br>
+            <li><a href="deposite.html">Deposite</a></li><br>
+            <li><a href="withdraw.html">Withdraw</a></li><br>
+            <li><a href="delete.html">Delete</a></li><br>
+            <li><a href="update.html">Update</a></li><br>
+        </ol>
+        <h1>💴💷</h1>
+    </div>
+    <div class="count">
+        <div class="acc">
+            <label for="total">No of Account</label>
+        </div>
+        <div>
+            <p id="para">0</p>
+        </div>
+    </div>
+
+    <div class="amount">
+        <div class="amt">
+            <label for="total">Tota Amount</label>
+        </div>
+        <div>
+            <p id="rupees">₹ 0</p>
+        </div>
+    </div>
+
+    <div class="search-button">
+        <form id="search-button">
+            <h3>Search Account Details</h3><br>
+            <input type="number" name="accno" id="account" placeholder="Enter account no"><br><br>
+            <input type="submit" id="searching" value="search">
+            <div id="message">
+                <p></p>
+            </div>
+        </form>
+    </div>
+
+    <div class="search">
+        <form id="search">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Account No</th>
+                        <th>Name</th>
+                        <th>Phone No</th>
+                        <th>Account Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="account-no">
+                            <p>XXXX</p>
+                        </td>
+                        <td id="name">
+                            <p>XXXX</p>
+                        </td>
+                        <td id="phone">
+                            <p>XXXX</p>
+                        </td>
+                        <td id="balance">
+                            <p>XXXX</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
+    </div>
+    <script>
+        const search = document.querySelector("#search-button");
+        const details = document.querySelector("#search");
+
+        search.addEventListener("submit", async (event) => {
+
+            event.preventDefault();
+            const accountno = document.querySelector("#account").value;
+            if(accountno == ''){
+                alert("Enter account no first");
+            }
+            else{
+            const response = await fetch(`/details?accountno=${accountno}`, { method: `GET` });
+            if (response.ok) {
+                const result = await response.json();
+                document.querySelector("#account-no").innerText = result.accountNo;
+                document.querySelector("#name").innerText = result.name;
+                document.querySelector("#phone").innerText = result.phone;
+                document.querySelector("#balance").innerText = result.balance;
+                document.querySelector("#message").innerText = "Account Fetch Successfully !";
+                search.reset();
+            }
+            else {
+                const result = await response.text();
+                alert(result);
+                search.reset();
+            }
+
+        }});
+
+
+    </script>
+</body>
+
+</html>

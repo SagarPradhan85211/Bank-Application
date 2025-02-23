@@ -84,7 +84,7 @@
             font-size: 30px;
         }
 
-        
+
 
         .amount {
             position: fixed;
@@ -97,7 +97,7 @@
             font-size: 30px;
         }
 
-    
+
 
         .search {
             position: fixed;
@@ -181,9 +181,21 @@
 
         .logout {
             position: fixed;
-            right: 20px;
-            top: 20px;
+            right: 35px;
+            top: 25px;
+        }
 
+        #logout-button {
+            font-size: 20px;
+            padding: 3px;
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+        }
+
+        #logout-button:hover {
+            background-color: red;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -197,7 +209,10 @@
     </div>
     <div>
         <img src="rbi.jpg" alt="" class="rbi-logo">
-    </div> 
+    </div>
+    <div class="logout">
+        <button id="logout-button">Logout</button>
+    </div>
     <div class="sidebar">
         <h1>Actions</h1><br>
         <ol class="list">
@@ -249,10 +264,23 @@
                     </tr>
                 </tbody>
             </table>
-
         </form>
     </div>
     <script>
+
+        window.onload = function () {
+            if (localStorage.getItem("isLoggedIn") !== "true") {
+                window.location.href = "invalid.html";
+            }
+        };
+
+        const logout = document.querySelector(".logout");
+
+        logout.addEventListener("click", async (event) => {
+            event.preventDefault();
+            window.location.href = "logout.html";
+        });
+
         const search = document.querySelector("#search-button");
         const details = document.querySelector("#search");
 
@@ -260,27 +288,28 @@
 
             event.preventDefault();
             const accountno = document.querySelector("#account").value;
-            if(accountno == ''){
+            if (accountno == '') {
                 alert("Enter account no first");
             }
-            else{
-            const response = await fetch(`/details?accountno=${accountno}`, { method: `GET` });
-            if (response.ok) {
-                const result = await response.json();
-                document.querySelector("#account-no").innerText = result.accountNo;
-                document.querySelector("#name").innerText = result.name;
-                document.querySelector("#phone").innerText = result.phone;
-                document.querySelector("#balance").innerText = result.balance;
-                document.querySelector("#message").innerText = "Account Fetch Successfully !";
-                search.reset();
-            }
             else {
-                const result = await response.text();
-                alert(result);
-                search.reset();
-            }
+                const response = await fetch(`/details?accountno=${accountno}`, { method: `GET` });
+                if (response.ok) {
+                    const result = await response.json();
+                    document.querySelector("#account-no").innerText = result.accountNo;
+                    document.querySelector("#name").innerText = result.name;
+                    document.querySelector("#phone").innerText = result.phone;
+                    document.querySelector("#balance").innerText = result.balance;
+                    document.querySelector("#message").innerText = "Account Fetch Successfully !";
+                    search.reset();
+                }
+                else {
+                    const result = await response.text();
+                    alert(result);
+                    search.reset();
+                }
 
-        }});
+            }
+        });
 
 
     </script>

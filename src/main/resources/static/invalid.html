@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +13,17 @@
             text-align: center;
             padding: 50px;
         }
+
         h1 {
             color: #ff3333;
         }
+
         p {
             font-size: 18px;
         }
     </style>
 </head>
+
 <body>
     <div>
         <h1>Please Login First</h1>
@@ -29,10 +33,11 @@
             localStorage.removeItem("isLoggedIn");
 
             // Redirect to login page after 2 seconds
-            setTimeout(function() {
-                window.location.href = "index.html"; 
+            setTimeout(function () {
+                window.location.href = "index.html";
             }, 3000); 
         </script>
     </div>
 </body>
+
 </html>

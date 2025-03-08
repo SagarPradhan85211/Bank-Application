@@ -14,13 +14,13 @@
         }
 
         body {
-            background: radial-gradient(circle, violet, red, yellow, brown);
-            height: 100vh;
-            margin: 0;
+            background-image: url(background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
             overflow: hidden;
         }
 
-        .create {
+        .delete {
             position: fixed;
             left: 600px;
             margin: 120px auto;
@@ -60,7 +60,7 @@
 </head>
 
 <body>
-    <div class="create">
+    <div class="delete">
         <h1 id="account">Delete Account</h1>
         <form id="fetch">
             <div id="account">

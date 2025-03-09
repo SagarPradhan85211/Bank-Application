@@ -13,7 +13,7 @@ public class service {
 
         account account = repo.findByAccountNo(accountno);
         if (account != null) {
-            return ("Account Already exists");
+            return ("Account Number Already exists");
         }
         account acc = new account();
         acc.setAccountNo(accountno);
@@ -68,7 +68,7 @@ public class service {
         }
         acc.setName(name);
         acc.setPhone(phone);
-        repo.save(acc); // Assuming repo.save() is updating or creating a new account
+        repo.save(acc);
         return "Update Successfully";
     }
 
